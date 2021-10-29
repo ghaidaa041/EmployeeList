@@ -1,7 +1,7 @@
 <?php
 include 'connect.php';
 
-f(isset($_GET['deleteid'])){
+if(isset($_GET['deleteid'])){
     $id=$_GET['deleteid'];
 
     $sql="delete from `crud` where id=$id"; 
@@ -9,12 +9,12 @@ f(isset($_GET['deleteid'])){
     $res=mysqli_query($con,$sql);
 
     if($res){
-        // header('location:display.php');
-        echo "rrr";
+        header('location:display.php');
     }else{
         die(mysqli_error($con));
 
     }
+}
 
 
 ?>
